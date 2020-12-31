@@ -176,7 +176,7 @@ class FlaskPlugin(BasePlugin):
         from flask import Blueprint, jsonify
 
         self.app.add_url_rule(
-            self.config.spec_url,
+            '/api' + self.config.spec_url,
             "openapi",
             lambda: jsonify(self.spectree.spec),
         )
